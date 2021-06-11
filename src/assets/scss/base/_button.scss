@@ -1,0 +1,81 @@
+.btn {
+  padding: $btn-default-padding;
+  font-size: $btn-text-size;
+  //box-shadow: 0 1px 2px $gray-800;
+  border-radius: 0;
+  &-primary {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      box-shadow: none;
+    }
+  }
+  &-white {
+    background-color: $white;
+    color: $primary;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &-bold {
+    font-weight: bold;
+  }
+  &-semi {
+    font-weight: 500;
+  }
+  &-xs {
+    min-width: $btn-xs-width;
+    padding: 3px 6px;
+  }
+  &-sm {
+    min-width: $btn-sm-width;
+  }
+  &-md {
+    min-width: $btn-md-width;
+  }
+  &-lg {
+    padding: 8px 15px;
+    min-width: $btn-lg-width;
+  }
+  &-xl {
+    min-width: $btn-xl-width;
+  }
+  &-rounded {
+    border-radius: $btn-rounded;
+  }
+  &-social {
+    @extend .btn-rounded;
+    color: $white;
+    margin: 0 5px;
+    &:hover {
+      color: $white;
+    }
+  }
+  &-g {
+    background-color: $google;
+    border-color: $google;
+    @extend .btn-social;
+    &:hover {
+      background-color: $google-hover;
+      border-color: $google-hover;
+    }
+  }
+  &-fb {
+    background-color: $facebook;
+    border-color: $facebook;
+    @extend .btn-social;
+    &:hover {
+      background-color: $facebook-hover;
+      border-color: $facebook-hover;
+    }
+  }
+  &-icon {
+    padding: 0px 8px;
+    min-width: 24px;
+    border-radius: 0;
+  }
+}

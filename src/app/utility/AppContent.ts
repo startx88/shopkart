@@ -1,0 +1,23 @@
+export const AppContent = {
+  name: 'Swiggy',
+  year: new Date().getFullYear(),
+  login: 'Login',
+  loginText: "If you don't have an account, please click on",
+  register: 'Register',
+  registerText: 'If you have an account, please click on',
+  rememberMe: 'remember me',
+  forgotPassword: 'Forgot Password',
+  welcomeTitle: 'Welcome to Swiggy',
+  welcomeText:
+    'At Swiggy, we build products & solutions that redefine the food ordering & delivery space in India, every single day. The best part? Every bit of your work at Swiggy will help us change the way India eats!',
+  footerText: 'All rights reserved, powerd by ',
+  poweredBy: 'startx.com',
+  singin: 'Sign In',
+  signup: 'Sign Up',
+  socialText: 'Sign in with google and facebook',
+  googleText: 'Google',
+  fbText: 'Facebook',
+  registerdRestaurant: 'Register restaurant',
+  totalRecipes: 'Total recipes',
+  satisfyUser: 'Satisfy user',
+};

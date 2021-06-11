@@ -1,0 +1,60 @@
+<div class="table-responsive">
+  <table class="table table-data">
+    <thead>
+      <tr>
+        <ng-container *ngFor="let item of filteredData[0] | keyvalue">
+          <th *ngIf="!hideColumns.includes(item.key)">{{item.key | capitalize}}</th>
+        </ng-container>
+        <th class="text-right" *ngIf="isSetting">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of filteredData; let i = index; trackBy: trackItemById">
+        <ng-container *ngFor="let item of row | keyvalue">
+          <ng-container *ngIf="!hideColumns.includes(item.key)">
+            <ng-container *ngIf="item.key=='category'; else start">
+              <td>{{item.value.title}}</td>
+            </ng-container>
+            <ng-template #start>
+              <td *ngIf="item.key==='active'; else first">
+                <span [ngClass]="{active:item.value,'in-active':!item.value}"></span>
+              </td>
+            </ng-template>
+            <ng-template #first>
+              <ng-container *ngIf="item.key==='image';else second">
+                <td><img [src]="item.value" [alt]="item.value" /></td>
+              </ng-container>
+              <ng-template #second>
+                <ng-container *ngIf="item.key==='insertAt'; else third">
+                  <td>{{item.value | date:short}}</td>
+                </ng-container>
+                <ng-template #third>
+                  <td>{{item.value}}</td>
+                </ng-template>
+              </ng-template>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+        <td style="width:50px">
+          <div class="dropdown">
+            <button class="btn btn-icon" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa fa-ellipsis-v"></i>
+            </button>
+            <ul class="dropdown-menu right" aria-labelledby="dropdownMenuButton1">
+              <li class="dropdown-header text-center xs">More Action</li>
+              <li><a class="dropdown-item" href="javascript:void(0)" (click)="onHandler('active',row)"><i
+                    class="fa fa-eye me-2"></i>Active</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" (click)="onHandler('inactive',row)"><i
+                    class="fa fa-eye-slash me-2"></i>In Active</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" (click)="onHandler('edit',row)"><i
+                    class="fa fa-pencil me-2"></i>Edit</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" (click)="onHandler('delete',row)"><i
+                    class="fa fa-trash me-2"></i> Delete</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

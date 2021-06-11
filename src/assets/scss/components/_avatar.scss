@@ -1,0 +1,57 @@
+.avatar {
+  overflow: hidden;
+  position: relative;
+  vertical-align: bottom;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  &.circle {
+    border-radius: 50%;
+  }
+
+  @each $k, $v in $avatar-sizes {
+    &.#{$k} {
+      width: $v;
+      height: $v;
+    }
+  }
+
+  &.gray {
+    background-color: $gray-100;
+    text-align: center;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &.h-ctr {
+    margin-left: auto;
+    margin-right: auto;
+    span {
+      margin-left: 10px;
+    }
+  }
+  &-v {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      color: $white;
+      margin-top: 10px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// user
+.user-h {
+  display: flex;
+  align-items: center;
+}

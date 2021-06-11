@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/globals/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "./assets/scss/globals/placeholders";
+@import "./assets/scss/globals/mixins";
+@import "./assets/scss/layout/wrapper";
+
+@import "./assets/scss/base/init";
+@import "./assets/scss/base/button";
+@import "./assets/scss/base/heading";
+@import "./assets/scss/base/common";
+
+@import "./assets/scss/layout/header";
+@import "./assets/scss/layout/footer";
+@import "./assets/scss/layout/dropdown";
+@import "./assets/scss/layout/navbar";
+@import "./assets/scss/layout/sidebar";
+
+@import "./assets/scss/components/loader";
+@import "./assets/scss/components/alert";
+@import "./assets/scss/components/list";
+@import "./assets/scss/components/avatar";
+@import "./assets/scss/components/page-title";
+@import "./assets/scss/components/modal";
+@import "./assets/scss/components/form";
+@import "./assets/scss/components/panel";
+@import "./assets/scss/components/upload";
+@import "./assets/scss/components/table";
+@import "./assets/scss/components/cover";
+@import "./assets/scss/components/tag-creator";
+@import "./assets/scss/components/page";

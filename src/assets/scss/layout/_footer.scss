@@ -1,0 +1,61 @@
+.footer {
+  background-color: $text-color-dark;
+
+  .links {
+    list-style: none;
+    padding: 0;
+    li {
+      a {
+        padding: 4px 0;
+        display: block;
+        color: $white;
+        font-weight: 300;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .social-btn {
+    border-radius: 50%;
+    background-color: lighten($text-color-dark, 5%);
+    width: 40px;
+    height: 40px;
+    color: $primary;
+    margin-left: 0px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 12px;
+    line-height: 1.4rem;
+    &:hover {
+      background-color: #ffa803;
+      color: #fff;
+    }
+  }
+}
+
+.subscribe-now {
+  border-bottom: 1px solid lighten($text-color-dark, 10%);
+  .lang-btn {
+    padding: 13px 15px;
+  }
+  .l-btn-link {
+    background: #1e1e1e;
+    color: #fff;
+    border: 1px solid #2c2c2c;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+}

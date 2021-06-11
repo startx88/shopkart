@@ -1,0 +1,55 @@
+.tag {
+  &-close {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  &-item {
+    border-radius: 3px;
+    padding: 3px 5px;
+    color: $white;
+    background-color: $primary;
+    @extend .xs;
+    &:hover {
+      background-color: lighten($primary, 5%);
+    }
+  }
+  &-creator {
+    padding: 3px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    width: 100%;
+    border-color: $input-gray-bg;
+    background-color: $input-gray-bg;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &:focus {
+      box-shadow: none;
+      background-color: rgba($input-gray-bg, 0.5);
+    }
+    ul {
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0;
+
+      li {
+        list-style: none;
+        &:not(.tag-input) {
+          margin-bottom: 3px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+
+  &-input {
+    flex: 2;
+    min-width: 250px;
+    min-height: auto;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

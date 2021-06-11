@@ -1,0 +1,13 @@
+.img-preview {
+  display: flex;
+  margin-top: 10px;
+  > * {
+    padding: 10px;
+    max-height: 100px;
+    border: 1px solid $gray-100;
+    margin-right: 10px;
+    &.fade {
+      opacity: 0.3;
+    }
+  }
+}

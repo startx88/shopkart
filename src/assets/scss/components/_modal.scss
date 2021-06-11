@@ -1,0 +1,48 @@
+.modal {
+  &-content {
+    transition: $modal-transition;
+    padding: $modal-content-padding;
+  }
+  &-header {
+    position: relative;
+    padding: 0 0 15px 0;
+    margin-bottom: 15px;
+    border-color: $gray-200;
+    &:before {
+      content: "";
+      height: 90%;
+      left: -20px;
+      position: absolute;
+      top: -8px;
+      width: 3px;
+      background-color: $orange;
+    }
+  }
+  &-body {
+    padding: 0;
+  }
+  &-footer {
+    border-color: $gray-200;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      color: $orange;
+    }
+  }
+}

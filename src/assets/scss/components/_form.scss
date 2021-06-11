@@ -1,0 +1,126 @@
+.form {
+  &-group {
+    &.is-invalid {
+      input,
+      select,
+      textarea {
+        border-color: rgba($danger, 0.3);
+        background-color: rgba($danger, 0.3);
+        @include placeholder($danger);
+        color: $danger;
+        &:focus {
+          background-color: rgba($danger, 0.3);
+        }
+      }
+      .invalid-feedback {
+        display: block;
+      }
+    }
+    &.is-valid {
+      input,
+      select,
+      textarea {
+        &:valid {
+          border-color: rgba($success, 0.3);
+          background-color: rgba($success, 0.3);
+        }
+      }
+      .invalid-feedback {
+        display: none;
+      }
+    }
+  }
+  &-control {
+    font-size: $base-size;
+    min-height: $input-height;
+    border-color: $input-border-color;
+    &.primary {
+      border-color: $input-gray-bg;
+      background-color: $input-gray-bg;
+      &:focus {
+        box-shadow: none;
+        border-color: rgba($primary, 0.5);
+        background-color: rgba($input-gray-bg, 0.5);
+      }
+    }
+    &.white {
+      border-color: $white;
+      background-color: $white;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    &.gray {
+      border-color: $input-gray-bg;
+      background-color: $input-gray-bg;
+      &:focus {
+        box-shadow: none;
+        background-color: rgba($input-gray-bg, 0.5);
+      }
+
+      &:disabled,
+      &[readonly] {
+        background-color: $white;
+      }
+    }
+    &.transparent {
+      border-color: transparent;
+      background-color: transparent;
+      border-radius: 50px;
+      box-shadow: none;
+      color: $white;
+      @include placeholder(#9da9bb);
+      &:focus {
+        @include placeholder($primary);
+      }
+    }
+
+    &.textarea {
+      min-height: 80px;
+    }
+  }
+
+  &-checkbox,
+  &-radio {
+    @extend %check-radio;
+  }
+  &-radio {
+    label {
+      &:before,
+      &:after {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+select {
+  min-width: 150px;
+}
+// ck editor
+.ck-content.ck-editor__editable {
+  min-height: 150px;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  border-color: $gray-200 !important;
+}
+
+.ck.ck-toolbar {
+  border-color: $gray-200 !important;
+  background-color: $input-gray-bg !important;
+}
+
+ckeditor {
+  &.is-invalid {
+    .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+      border-color: rgba($danger, 0.3);
+      background-color: rgba($danger, 0.3);
+      @include placeholder($danger);
+      color: $danger;
+      &:focus {
+        background-color: rgba($danger, 0.3);
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: $text-color;
+  font-family: $raleway;
+  &.light {
+    font-weight: 300;
+  }
+  small {
+    display: block;
+    margin-top: 5px;
+    font-size: 85%;
+    font-weight: 400;
+    font-family: $base-family;
+  }
+}
+
+h1 {
+  font-size: $h1;
+  &.lg {
+    font-size: $base-size * 2;
+  }
+}
+h2 {
+  font-size: $h2;
+  &.lg {
+    font-size: $h1;
+  }
+}
+h3 {
+  font-size: $h3;
+}
+h4 {
+  font-size: $h4;
+}
+h5 {
+  font-size: $h5;
+}
+h6 {
+  font-size: $h6;
+}

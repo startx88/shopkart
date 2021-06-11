@@ -1,0 +1,47 @@
+<app-page-title>
+  <app-button data-bs-toggle="modal" #modalBtn data-bs-target="#add-size">
+    Add Size
+  </app-button>
+</app-page-title>
+<app-modal [id]="'add-size'" (close)="onModalClose()" [isEdit]="isEditable">
+  <form (ngSubmit)="onAddUpdate()" class="body needs-validation" [formGroup]="form">
+    <div class="form-group mb-3"
+      [ngClass]="{'is-valid':title.valid && title.touched, 'is-invalid':title.invalid && title.touched}">
+      <label class="form-label">Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control gray" placeholder="Name" formControlName="title"
+        [ngClass]="{'is-valid':title.valid && title.touched, 'is-invalid':title.invalid && title.touched}" />
+      <span class="invalid-feedback">Name is required</span>
+    </div>
+    <div class="form-group mb-3" *ngIf="(categories$ | async) as categories">
+      <label class="form-label">Select category</label>
+      <select formControlName="category" [ngValue]="defaultCategory" class="form-control gray">
+        <option [ngValue]="null" disabled>Select category</option>
+        <option *ngFor="let category of categories" [ngValue]="category"
+          [selected]="category.title===defaultCategory?.title">
+          {{category.title}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group mb-3">
+      <label class="form-label">Create sizes</label>
+      <app-tag-creator [tags]="tags"></app-tag-creator>
+    </div>
+    <div class="form-group text-center">
+      <app-button type="submit">{{isEditable?'Update':'Add'}} Category</app-button>
+    </div>
+  </form>
+</app-modal>
+
+<app-panel color="white" *ngIf="(sizes$ | async) as sizes">
+  <header class="panel-title">
+    <h4 class="mb-0">Category list</h4>
+  </header>
+  <section class="panel-body" *ngIf="sizes.length>0; else nodata">
+    <app-data-table (handler)="onHandler($event)" [data]="sizes"></app-data-table>
+  </section>
+  <ng-template #nodata>
+    <div class="no-data text-center">
+      <img src="../../assets/images/no-data.png">
+    </div>
+  </ng-template>
+</app-panel>

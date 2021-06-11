@@ -1,0 +1,5 @@
+<input type="file" [name]="name" class="form-control gray" [multiple]="multiple" (change)="onUpload($event)" />
+<div class="img-preview" *ngIf="!multiple && preview">
+  <img [src]="image" *ngIf="image" />
+  <img [src]="selectImage" [ngClass]="{fade:image}" *ngIf="selectImage" alt="select" />
+</div>

@@ -1,0 +1,105 @@
+<footer class="footer">
+  <div class="subscribe-now py-5">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-5 col-md-6">
+          <div class="subscribe-newsletter">
+            <h6 class="text-white mb-4">Connect with us for update and offers.</h6>
+            <form class="form-row">
+              <input class="form-control col-sm-8 gray" name="newsletter" type="text"
+                placeholder="Enter your email address">
+              <button class="btn btn-primary btn-sm col-sm-3 ml-3">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3">
+          <div class="language">
+            <form method="post" enctype="multipart/form-data" id="form-language">
+              <div class="btn-group open">
+                <button class="lang-btn l-btn-link dropdown-toggle-no-caret" data-toggle="dropdown"
+                  aria-expanded="true">
+                  <i class="fa fa-globe mr-3"></i><span class="hidden-xs">English</span><i
+                    class="fa ml-3 fa-caret-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">English</a></li>
+                  <li><a href="javascript:;">Spanish</a></li>
+                  <li><a href="javascript:;">Hindi</a></li>
+                  <li><a href="javascript:;">Punjabi</a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <app-logo></app-logo>
+        <p class="mt-3 light line-ht xs text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          interdum leo
+          at
+          finibus
+          ornare. Aliquam
+          gravida
+          condimentum neque, vel ultrices purus dignissim a.</p>
+      </div>
+      <div class="col">
+        <h5 class="text-white">About Shopkart</h5>
+        <ul class="links">
+          <li><a routerLink="/about"><i class="fa  fa-caret-right me-2"></i>About Us</a></li>
+          <li><a routerLink="/career"><i class="fa  fa-caret-right me-2"></i>Careers</a></li>
+          <li><a routerLink="/blog"><i class="fa  fa-caret-right me-2"></i>Blog</a></li>
+          <li><a routerLink="/contact"><i class="fa  fa-caret-right me-2"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5 class="text-white">Business</h5>
+        <ul class="links __web-inspector-hide-shortcut__">
+          <li><a href="add_restaurant.html"><i class="fa  fa-caret-right me-2"></i>Add a Restaurant</a></li>
+          <li><a href="#"><i class="fa  fa-caret-right me-2"></i>Buniess Order Guidelines</a></li>
+          <li><a href="#"><i class="fa  fa-caret-right me-2"></i>Orders</a></li>
+          <li><a href="#"><i class="fa  fa-caret-right me-2"></i>Book</a></li>
+          <li><a href="#"><i class="fa  fa-caret-right me-2"></i>Trace</a></li>
+          <li><a href="#"><i class="fa  fa-caret-right me-2"></i>Advertise</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5 class="text-white">Partner with us</h5>
+        <ul class="links">
+          <li><a routerLink="/partner-with-us" (click)="scrollTop()"><i class="fa  fa-building  me-2"></i>For
+              Restaurants</a>
+          </li>
+          <li><a href="add_driver.html"><i class="fa fa-drivers-license-o me-2"></i>For Driver</a></li>
+        </ul>
+        <div class="social-btns d-flex">
+          <a href="#">
+            <div class="social-btn soc-btn"><i class="fa fa-facebook-f"></i></div>
+          </a>
+          <a href="#">
+            <div class="social-btn soc-btn"><i class="fa fa-twitter"></i></div>
+          </a>
+          <a href="#">
+            <div class="social-btn soc-btn"><i class="fa fa-instagram"></i></div>
+          </a>
+          <a href="#">
+            <div class="social-btn soc-btn"><i class="fa fa-linkedin"></i></div>
+          </a>
+          <a href="#">
+            <div class="social-btn soc-btn"><i class="fa fa-youtube"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white p-3">
+    <div class="container">
+      <div class="text-center">
+        <p class="xs text-gray mb-0">&copy; - {{data.year}} LearnUi, All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

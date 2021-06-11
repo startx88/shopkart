@@ -1,0 +1,44 @@
+<aside class="sidebar">
+  <app-logo></app-logo>
+  <div class="sidebar-inner">
+    <div class="sidebar-user">
+      <a routerLink="/vendor/profile" class="avatar xl d-flex circle m-auto">
+        <img src="../../../assets/images/avatar.png" />
+      </a>
+      <h6 class="mt-3">
+        Pradeep Kumar
+        <small class="text-gray">Admin</small>
+      </h6>
+      <span class="text-primary">
+        <i class="fa fa-mobile"></i>
+        7291893484
+      </span>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="header">Menu</li>
+      <li class="nav-item" *ngFor="let menu of data.adminMenu; let i = index">
+        <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"
+          [routerLink]="['/admin' + menu.url]">
+          <i class="fa fa-{{menu.icon}} me-2"></i> {{menu.name}}
+        </a>
+      </li>
+      <li class="header my-3">Settings</li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin' + '/profile']">
+          <i class="fa fa-user me-2"></i> Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin' + '/setting']">
+          <i class="fa fa-cog me-2"></i>
+          Setting</a>
+      </li>
+    </ul>
+  </div>
+  <!-- Sidebar footer -->
+  <footer class="sidebar-footer">
+    <p class="xs mb-0">
+      <span>&copy; Version 1.0.0</span>
+    </p>
+  </footer>
+</aside>

@@ -1,0 +1,14 @@
+.page-hero {
+  &-img {
+    min-height: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    background-size: cover;
+    margin-bottom: 15px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      min-height: inherit;
+    }
+  }
+}

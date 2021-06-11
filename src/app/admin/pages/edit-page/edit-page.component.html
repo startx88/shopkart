@@ -1,0 +1,99 @@
+<app-page-title>
+  <app-button (click)="onCancel()"> Cancel </app-button>
+</app-page-title>
+
+<!-- Content -->
+<div class="row">
+  <div class="col-md-9">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control gray" readonly [value]="page.title">
+
+      </div>
+      <!-- Form -->
+      <div class="form-group mt-3"
+        [ngClass]="{'is-valid':excerpt.valid && excerpt.touched , 'is-invalid':excerpt.invalid && excerpt.touched}">
+        <label class="xs form-label">Excerpt</label>
+        <ckeditor formControlName="excerpt" name="excerpt" [editor]="Editor" [data]="page.excerpt"
+          [ngClass]="{'is-valid':excerpt.valid && excerpt.touched , 'is-invalid':excerpt.invalid && excerpt.touched}">
+        </ckeditor>
+        <span class="invalid-feedback">Please enter excerpt</span>
+      </div>
+      <div class="title mt-4 d-flex justify-content-between align-items-center">
+        <h6 class="design">Add page content
+          <small>Fill the page detail as you want.</small>
+        </h6>
+        <app-button (click)="onAddRow()" [size]="'xs'"><i class="fa fa-plus me-2"></i> Add</app-button>
+      </div>
+      <ng-container formArrayName="content">
+        <div class="mb-3 mt-3" *ngFor="let content of form.controls.content['controls']; let i=index;"
+          [formGroupName]="i">
+          <!-- <label class=" form-label">Content Section {{i + 1}}</label> -->
+          <div class="form-group mb-3" [ngClass]="{
+                'is-valid':controls(i).get('title').valid  && controls(i).get('title').touched, 'is-invalid':controls(i).get('title').invalid && controls(i).get('title').touched
+              }">
+            <input type="text" id="title-{{i}}" formControlName="title" class="form-control white"
+              placeholder="Enter title" [ngClass]="{
+                'is-valid':controls(i).get('title').valid  && controls(i).get('title').touched, 'is-invalid':controls(i).get('title').invalid && controls(i).get('title').touched
+              }" />
+            <span class="invalid-feedback">Please enter title</span>
+          </div>
+          <div class="form-group">
+            <app-uploader [selectImage]="selectedImage" name="image-{{i}}" (upload)="onUpload($event, i, 'status')">
+            </app-uploader>
+          </div>
+          <div class="form-group mb-3" [ngClass]="{
+                'is-valid':controls(i).get('text').valid  && controls(i).get('text').touched, 'is-invalid':controls(i).get('text').invalid && controls(i).get('text').touched
+              }">
+            <ckeditor [editor]="Editor" id="text{{i}}" name="text{{i}}" formControlName="text" placeholder="Description"
+              [data]="'dfd'" [ngClass]="{
+                'is-valid':controls(i).get('text').valid  && controls(i).get('text').touched, 'is-invalid':controls(i).get('text').invalid && controls(i).get('text').touched
+              }"></ckeditor>
+            <span class="invalid-feedback">Please enter description</span>
+          </div>
+        </div>
+      </ng-container>
+
+    </form>
+  </div>
+  <div class="col-md-3">
+    <app-panel>
+      <app-title title="Publish">
+        <a routerLink="/">Preview</a>
+      </app-title>
+      <section class="panel-body">
+        <ul class="list  reset list-v">
+          <li class="d-flex justify-content-between align-items-center">
+            <span><i class="fa fa-globe me-2"></i>Status: <b>Publish</b> </span>
+            <i class="fa ms-2 fa-edit"></i>
+          </li>
+          <li class="d-flex justify-content-between align-items-center">
+            <span><i class="fa fa-globe me-2"></i>Visibliy: <b>Publish</b> </span>
+            <i class="fa ms-2 fa-edit"></i>
+          </li>
+        </ul>
+      </section>
+      <footer class="d-flex justify-content-between align-items-center">
+        <a routerLink="/admin/pages">Cancel</a>
+        <app-button [size]="'xs'" (click)="onPublish()">Update</app-button>
+      </footer>
+    </app-panel>
+    <app-panel>
+      <header class="panel-title">
+        <h6>Featured image</h6>
+      </header>
+      <div class="page-hero">
+        <div class="page-hero-img" *ngIf="hero || page.hero" style="background-image: url({{hero?.url}})">
+          <img *ngIf="page.hero && !hero?.url" src="{{page.hero}}" />
+        </div>
+        <app-uploader *ngIf="!hero" [preview]="false" [selectImage]="selectedImage" (upload)="onUpload($event)">
+        </app-uploader>
+        <div *ngIf="hero" class="mt-3 d-flex align-items-center justify-content-between">
+          <app-button (click)="onRemoveHero()" [color]="'secondary'" [size]="'xs'">Cancel</app-button>
+          <app-button [size]="'xs'" (click)="onUploadHero()">Save</app-button>
+        </div>
+      </div>
+    </app-panel>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.panel {
+  padding: 20px;
+  &-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 15px;
+    h4,
+    h5,
+    h6,
+    h2,
+    h3 {
+      position: relative;
+      padding-left: 0;
+      @extend .design;
+      &:before {
+        left: -20px;
+      }
+    }
+  }
+
+  &-footer {
+    padding-top: 15px;
+    border-top: 1px solid $gray-200;
+  }
+  &.white {
+    background-color: $white;
+    box-shadow: 0 0 4px $gray-200;
+  }
+}

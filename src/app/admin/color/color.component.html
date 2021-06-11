@@ -1,0 +1,50 @@
+<app-page-title>
+  <app-button data-bs-toggle="modal" #modalBtn data-bs-target="#add-category">
+    Add color
+  </app-button>
+</app-page-title>
+
+
+<app-modal [id]="'add-category'" (close)="onModalClose()" [isEdit]="isEditable">
+  <form (ngSubmit)="onAddUpdate()" class="body needs-validation" [formGroup]="form">
+    <div class="form-group mb-3"
+      [ngClass]="{'is-valid':title.valid && title.touched, 'is-invalid':title.invalid && title.touched}">
+      <label class="form-label">Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control gray" placeholder="Color name" formControlName="title"
+        [ngClass]="{'is-valid':title.valid && title.touched, 'is-invalid':title.invalid && title.touched}" />
+      <span class="invalid-feedback">Color is required</span>
+    </div>
+    <div class="form-group mb-3"
+      [ngClass]="{'is-valid':color.valid && color.touched, 'is-invalid':color.invalid && color.touched}">
+      <label class="form-label">Color <span class="text-danger">*</span></label>
+      <label for="color" class="input-group align-items-center form-control gray">
+        <input id="color" type="color" placeholder="Color name" formControlName="color"
+          [ngClass]="{'is-valid':color.valid && color.touched, 'is-invalid':color.invalid && color.touched}" />
+        <span class="ms-2">Choose color</span>
+      </label>
+    </div>
+    <div class="form-group mb-3">
+      <label class="form-label">Choose image</label>
+      <app-uploader [selectImage]="selectedImage" (upload)="onUpload($event)"></app-uploader>
+    </div>
+
+    <div class="form-group text-center">
+      <app-button type="submit">{{isEditable?'Update':'Add'}} Category</app-button>
+    </div>
+  </form>
+</app-modal>
+
+
+<app-panel color="white" *ngIf="(colors$ | async) as colors">
+  <header class="panel-title">
+    <h4 class="mb-0">Color list</h4>
+  </header>
+  <section class="panel-body" *ngIf="colors.length>0; else nodata">
+    <app-data-table (handler)="onHandler($event)" [data]="colors"></app-data-table>
+  </section>
+  <ng-template #nodata>
+    <div class="no-data text-center">
+      <img src="../../assets/images/no-data.png">
+    </div>
+  </ng-template>
+</app-panel>

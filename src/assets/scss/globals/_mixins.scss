@@ -1,0 +1,39 @@
+@mixin placeholder($color: $white, $opacity: 1) {
+  &::placeholder {
+    color: rgba($color, $opacity);
+    opacity: 1;
+    /* Firefox */
+  }
+  &:-ms-input-placeholder {
+    color: rgba($color, $opacity);
+  }
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba($color, $opacity);
+  }
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin elementWithMediaQuery($prefix) {
+  @each $k, $v in $grid-breakpoints {
+    .#{$prefix}-#{$k} {
+      @media (min-width: $v) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+// colors
+$white: #fff !default;
+$black: #000 !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #7750f8 !default;
+$pink: #ff3167 !default;
+$red: #dc3545 !default;
+$orange: #fc8019 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$info: #0da9ef !default;
+
+$body-bg: #f4f7fc !default;
+$gray-light: #f1f1f1 !default;
+$text-color: #374250 !default;
+$body-color: $text-color !default;
+$text-color-light: #757a95 !default;
+$text-color-dark: #171a29 !default;
+
+$primary: #fc8019 !default;
+$parimary-light: rgba($primary, 55%) !default;
+$primary-dark: rgba($primary, 5%) !default;
+
+$wraning: $yellow !default;
+$warning-light: #fed700 !default;
+$warning-dark: "" !default;
+
+$danger: $red !default;
+$danger-light: #e74c3c !default;
+$danger-dark: #ff0000 !default;
+
+$success: $green !default;
+
+// global settings
+$global-height: 100vh !default;
+$global-width: 100% !default;
+$link-color: $orange;
+$link-hover-color: darken($orange, 15%);
+
+// font settings
+$base-size: 0.9rem; // 14px
+$base-family: "Roboto", sans-serif !default;
+$raleway: "Raleway", sans-serif !default;
+$line-height: 1.4 !default;
+$letter-space: 0.02rem !default;
+$font-light: 300;
+$regular: 400;
+$semi-500: 500;
+$semi-600: 600;
+$bold: 700;
+
+// headings
+$h1: $base-size * 2 !default; // 28px
+$h2: $base-size * 1.65 !default; // 24px
+$h3: $base-size * 1.57 !default; // 22px
+$h4: $base-size * 1.2857 !default; // 18px
+$h5: $base-size * 1.0714 !default; // 15px
+$h6: $base-size !default;
+
+// topbar
+$brand-img-size: 40px !default;
+$navbar-light-bg: $white !default; // linear-gradient(45deg, #49cdd0, #00bcd4) !default;
+$navbar-dark-bg: $primary !default;
+$navbar-height: 60px !default;
+$navbar-zindex: 1000 !default;
+$navbar-brand-size: 30px !default;
+$navbar-brand-space: 10px !default;
+$navbar-bg-divider-color: lighten($primary, 5%) !default;
+$navbar-link-color: $white !default;
+$navbar-link-dark-color: $primary !default;
+$navbar-link-hover-color: rgba($black, 0.1) !default;
+$navbar-link-active-color: rgba($black, 0.1) !default;
+$navbar-search-bg: $text-color !default;
+$navbar-shadow: 0px 5px 6px -5px rgb(0 0 0 / 15%) !default;
+
+$search-width: 250px !default;
+$search-bg: rgba($white, 0.1);
+
+$dropdown-bg: $white !default;
+$dropdown-shadow: 0px 6px 6px -3px rgb(0 0 0 / 15%) !default;
+$dropdown-link-color: $primary !default;
+$dropdown-link-hover-color: $orange !default;
+$dropdown-link-bg-hover-color: $gray-100 !default;
+
+// sidebar
+$sidebar-bg: $white !default;
+$sidebar-width: 250px !default;
+$sidbear-brand-color: $primary !default;
+$sidebar-divider-color: rgba($white, 0.05) !default;
+$sidebar-shadow: 0 0 2rem 0 rgb(0 0 0 / 5%);
+$sidebar-zindex: 1 !default;
+$sidbear-link-color: $primary !default;
+$sidbear-header-color: rgba($black, 0.35) !default;
+$sidebar-link-hover-color: $primary !default;
+$sidebar-link-active-color: $white !default;
+$sidebar-link-active-bg-color: $primary !default;
+$sidebar-divider-style: dashed !default;
+$sidebar-overflow: auto !default;
+$sidebar-menu-padding: 20px !default;
+
+// btn
+$btn-text-size: $base-size !default;
+$btn-default-padding: 6px 12px !default;
+$btn-xs-width: 80px !default;
+$btn-sm-width: 100px !default;
+$btn-md-width: 120px !default;
+$btn-lg-width: 150px !default;
+$btn-xl-width: 200px !default;
+$btn-rounded: 50px !default;
+
+// form
+$input-height: 40px !default;
+$input-border-color: rgba($text-color, 0.5) !default;
+$input-placeholder-color: rgba($text-color, 0.5) !default;
+$input-focus-shadow-color: $white !default;
+$input-border-active-color: $white !default;
+$input-gray-bg: $body-bg !default;
+
+// radio, checkbox
+$radio-checkbox-border-color: $gray-300 !default;
+$radio-checkbox-active-color: $text-color !default;
+$radio-checkbox-bg-color: $text-color !default;
+
+// table
+$table-head-bg: $body-bg;
+$table-border-color: #dce7f7;
+
+// Avatar
+$avatar-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2) !default;
+$avatar-sizes: (
+  xs: 35px,
+  sm: 45px,
+  md: 55px,
+  ml: 80px,
+  lg: 100px,
+  xl: 150px,
+  full: "100%",
+) !default;
+
+// social media color
+$google: #d14c2d !default;
+$google-hover: #b7381b !default;
+$facebook: #516fa3 !default;
+$facebook-hover: #38588e !default;
+$twitter: #4eb7ec !default;
+$twitter-hover: #38abe4 !default;
+$github: #434343 !default;
+$github-hover: #252525 !default;
+
+// alert
+$alert-sizes: (
+  xs: 250px,
+  sm: 350px,
+  md: 400px,
+  lg: 100%,
+) !default;
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px,
+);
+
+$paragraph: (
+  xs: 0.73rem,
+  sm: $base-size,
+  md: 1rem,
+  lg: 1.2857rem,
+) !default;
+
+$custom-colors: () !default;
+$custom-colors: map-merge(
+  (
+    "blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800,
+    "color": $text-color,
+    "color-dark": $text-color-dark,
+  ),
+  $custom-colors
+);
+
+// width
+
+$widths: (
+  w-100: 100px,
+  w-150: 150px,
+  w-200: 200px,
+  w-300: 300px,
+  w-400: 400px,
+  w-500: 500px,
+  w-600: 600px,
+  w-700: 700px,
+  w-800: 800px,
+  w-full: 100%,
+) !default;
+
+$font-family: (
+  roboto: $base-family,
+  raleway: $raleway,
+) !default;
+
+// modals
+$modal-content-padding: 20px !default;
+$modal-transition: all 300ms linear !default;

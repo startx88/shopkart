@@ -1,0 +1,12 @@
+<div class="tag-creator">
+  <ul>
+    <li *ngFor="let tag of tags; let i=index">
+      <div class="tag-item">
+        {{tag | uppercase}}
+        <span class="tag-close" (click)="onRemoveTag(i)">&times;</span>
+      </div>
+    </li>
+  </ul>
+  <input #input type="text" placeholder="Type anything and press enter or tab" (keydown.enter)="addTag($event)"
+    (keydown.tab)="addTag($event)" class="tag-input form-control gray" (keydown.backspace)="removeLastTag($event)" />
+</div>

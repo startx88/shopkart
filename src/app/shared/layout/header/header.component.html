@@ -1,0 +1,69 @@
+<div class="navbar navbar-expand-lg navbar-{{type}}">
+  <div class="container">
+    <app-logo></app-logo>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/"> Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/shop">Shop</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/shop">Store</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a title="wishlist" class="nav-link" routerLink="/wishlist">
+          <span class="avatar text-gray xs circle gray">
+            <i class="fa fa-heart-o"></i>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/cart">
+          <span class="avatar text-gray xs circle gray">
+            <i class="fa fa-shopping-bag"></i>
+          </span>
+          <span class="nav-link-text s-xs ms-2">
+            <small class="d-flex text-gray mb-0">My Cart</small>
+            Rs. 1500
+          </span>
+        </a>
+      </li>
+      <li class="nav-item {{isAuth?'dropdown':''}}" routerLinkActive="active">
+        <a class="nav-link" routerLink="/auth" *ngIf="!isAuth; else user">
+          <span class="avatar text-gray xs circle gray">
+            <i class="fa fa-user"></i>
+          </span>
+          <span class="nav-link-text s-xs ms-2">
+            <small class="d-flex text-gray mb-0">Hello Sign In</small>
+            My Account
+          </span>
+        </a>
+        <ng-template #user>
+          <a class="nav-link" routerLink="/profile">
+            <span class="avatar text-gray xs circle gray">
+              <i class="fa fa-user"></i>
+            </span>
+            <span class="nav-link-text s-xs ms-2">
+              <small class="d-flex text-gray mb-0">Pradeep Kumar</small>
+              My Account
+            </span>
+          </a>
+          <div class="dropdown-menu right">
+            <a class="dropdown-item" routerLink="/admin/profile"><i class="fa fa-user me-2"></i>Profile</a>
+            <a class="dropdown-item" routerLink="/admin/change-password"><i class="fa fa-key me-2"></i>Change
+              Password</a>
+            <a class="dropdown-item" routerLink="/admin/setting"><i class="fa fa-cog me-2"></i>Settings</a>
+            <hr class="dropdown-divider" />
+            <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-lock me-2"></i>Logout</a>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+
+  </div>
+</div>

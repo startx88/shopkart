@@ -1,0 +1,25 @@
+.navbar-nav {
+  &.nav-circle {
+    .nav-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $gray-100;
+      text-align: center;
+      position: relative;
+      .badge {
+        top: -5px;
+        right: -5px;
+        position: absolute;
+        color: $primary;
+      }
+      &:hover {
+        background-color: $primary;
+        color: $white;
+        .badge {
+          color: $text-color-dark;
+        }
+      }
+    }
+  }
+}

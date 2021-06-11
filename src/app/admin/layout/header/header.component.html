@@ -1,0 +1,35 @@
+<header class="navbar navbar-admin navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="nav-toggle">
+      <i class="fa fa-list"></i>
+    </div>
+    <ul class="nav navbar-nav ms-auto">
+      <li class="nav-item d-flex align-items-center">
+        <a class="nav-link">
+          <i class="fa fa-comment"></i>
+        </a>
+      </li>
+      <li class="nav-item d-flex align-items-center">
+        <a class="nav-link">
+          <i class="fa fa-bell"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown ms-4">
+        <a href="#" class="dropdown-toggle d-flex align-items-center" data-toggle="dropdown">
+          <div class="avatar sm circle me-2">
+            <img src="../../../assets/images/avatar.png" />
+          </div>
+          <span>Pradeep</span>
+        </a>
+        <div class="dropdown-menu right">
+          <a class="dropdown-item" routerLink="/admin/profile"><i class="fa fa-user me-2"></i>Profile</a>
+          <a class="dropdown-item" routerLink="/admin/change-password"><i class="fa fa-key me-2"></i>Change
+            Password</a>
+          <a class="dropdown-item" routerLink="/admin/setting"><i class="fa fa-cog me-2"></i>Settings</a>
+          <hr class="dropdown-divider" />
+          <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-lock me-2"></i>Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>

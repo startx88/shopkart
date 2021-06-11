@@ -1,0 +1,6 @@
+<ng-container *ngIf="(alert$ | async) as alert">
+  <div class="alert alert-dismissible btn-{{alert.color}} alert-{{size}} {{direction}} alert-absolute">
+    {{alert.message}}
+    <button type="button" (click)="onClose()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</ng-container>
